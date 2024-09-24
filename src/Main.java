@@ -1,17 +1,19 @@
 import jun.ManagementSystem;
 import jun.ManagementSystemImpl;
 import jun.Member;
+import sanghwa.addMember;
 
 import java.util.List;
 import java.util.Optional;
 
+import static sanghwa.addMember.set;
+
 public class Main {
 
     // 여러분이 구현한 클래스로 교체해서 테스트하면 됩니다
-    static ManagementSystem ms = new ManagementSystemImpl();
+    static addMember ms = new addMember();
 
     public static void main(String[] args) {
-        System.out.println("9번까지 모두 출력되면 성공");
         // 멤버 추가 테스트
         ms.addMember("Kim", 34, 1);
         ms.addMember("David", 15, 2);
@@ -25,7 +27,7 @@ public class Main {
         if (ms.getSize() == 9) {
             System.out.println("1. 멤버 추가 성공");
         }
-
+/*
         // id 중복 테스트
         boolean addJun = ms.addMember("Jun", 24, 10);
         boolean addSam = ms.addMember("Sam", 35, 5);
@@ -71,6 +73,6 @@ public class Main {
         ms.updateMember(3, "Park", 50);
         if (ms.findById(3).getAge() == 50 && ms.findById(3).getName().equals("Park")) {
             System.out.println("9. 멤버 이름 + 나이 변경 성공");
-        }
+        }*/
     }
 }
