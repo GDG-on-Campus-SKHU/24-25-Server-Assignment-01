@@ -27,7 +27,7 @@ public class Main {
         if (ms.getSize() == 9) {
             System.out.println("1. 멤버 추가 성공");
         }
-/*
+
         // id 중복 테스트
         boolean addJun = ms.addMember("Jun", 24, 10);
         boolean addSam = ms.addMember("Sam", 35, 5);
@@ -47,7 +47,7 @@ public class Main {
         if (kim.getName().equals("Kim")) {
             System.out.println("4. 멤버 검색(id) 성공");
         }
-
+/*
         // 멤버 조건 검색 테스트 1
         List<Member> members = ms.findMembers((member) -> member.getAge() > 30);
         if (members.size() == 4) {
@@ -73,6 +73,6 @@ public class Main {
         ms.updateMember(3, "Park", 50);
         if (ms.findById(3).getAge() == 50 && ms.findById(3).getName().equals("Park")) {
             System.out.println("9. 멤버 이름 + 나이 변경 성공");
-        }*/
-    }
+        }
+*/    }
 }
