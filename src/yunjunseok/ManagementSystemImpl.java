@@ -76,7 +76,9 @@ public class ManagementSystemImpl implements ManagementSystem {
     // 마지막에 .toList()로 불변 리스트로 변환해줘야 함. 아니면 스트림으로 반환됨.
     @Override
     public List<Member> findMembers(Predicate<Member> filter) {
-        return memList.values().stream().filter(filter).toList();
+        return memList.values().stream()
+        .filter(filter)
+        .toList();
     }
     // optional로 반환해주는 findFirst() 메서드를 찾아서 해당 메서드를 사용해주었음.
     @Override
