@@ -4,6 +4,7 @@ import jun.Member;
 
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 
 public class addMember { //메서드명 전체를 포괄하는 것으로 수정해야함
     public static HashSet<Member> set = new HashSet<>();
@@ -46,5 +47,16 @@ public class addMember { //메서드명 전체를 포괄하는 것으로 수정�
         }
         System.out.println("해당 id를 가진 member가 없습니다.");
         return null;
+    }
+
+    public static List findMembers(int age){
+        //리스트 생성
+        Iterator<Member> iterator = set.iterator();
+        while(iterator.hasNext()){
+            Member member = iterator.next();
+            if(member.getAge() == age){
+                //리스트에 담기
+            }
+        }
     }
 }
