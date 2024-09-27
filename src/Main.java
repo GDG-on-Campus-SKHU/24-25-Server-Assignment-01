@@ -1,17 +1,15 @@
 import jun.ManagementSystem;
 import jun.ManagementSystemImpl;
 import jun.Member;
-import sanghwa.addMember;
+import sanghwa.memberSet;
 
 import java.util.List;
 import java.util.Optional;
 
-import static sanghwa.addMember.set;
-
 public class Main {
 
     // 여러분이 구현한 클래스로 교체해서 테스트하면 됩니다
-    static addMember ms = new addMember();
+    static memberSet ms = new memberSet();
 
     public static void main(String[] args) {
         // 멤버 추가 테스트
@@ -47,8 +45,8 @@ public class Main {
         if (kim.getName().equals("Kim")) {
             System.out.println("4. 멤버 검색(id) 성공");
         }
-/*
-        // 멤버 조건 검색 테스트 1
+
+        //멤버 조건 검색 테스트 1
         List<Member> members = ms.findMembers((member) -> member.getAge() > 30);
         if (members.size() == 4) {
             System.out.println("5. 멤버 조건 검색 성공 1");
@@ -74,5 +72,5 @@ public class Main {
         if (ms.findById(3).getAge() == 50 && ms.findById(3).getName().equals("Park")) {
             System.out.println("9. 멤버 이름 + 나이 변경 성공");
         }
-*/    }
+   }
 }
