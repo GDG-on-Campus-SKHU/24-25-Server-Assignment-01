@@ -1,5 +1,5 @@
 import jun.ManagementSystem;
-import jun.ManagementSystemImpl;
+import ktw.ManagementSystemImpl;
 import jun.Member;
 
 import java.util.List;
