@@ -1,7 +1,6 @@
-import jun.ManagementSystem;
-import jun.ManagementSystemImpl;
-import jun.Member;
-
+import SongInSeok.ManagementSystem;
+import SongInSeok.ManagementSystemImpl;
+import SongInSeok.Member;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,9 +21,12 @@ public class Main {
         ms.addMember("Anna", 24, 7);
         ms.addMember("Main", 43, 8);
         ms.addMember("Michael", 30, 9);
+
         if (ms.getSize() == 9) {
             System.out.println("1. 멤버 추가 성공");
+
         }
+
 
         // id 중복 테스트
         boolean addJun = ms.addMember("Jun", 24, 10);
@@ -45,12 +47,12 @@ public class Main {
         if (kim.getName().equals("Kim")) {
             System.out.println("4. 멤버 검색(id) 성공");
         }
-
         // 멤버 조건 검색 테스트 1
         List<Member> members = ms.findMembers((member) -> member.getAge() > 30);
         if (members.size() == 4) {
             System.out.println("5. 멤버 조건 검색 성공 1");
         }
+
 
         // 멤버 조건 검색 테스트 2
         Optional<Member> david = ms.findMember((member) -> member.getName().equals("David"));
@@ -72,5 +74,9 @@ public class Main {
         if (ms.findById(3).getAge() == 50 && ms.findById(3).getName().equals("Park")) {
             System.out.println("9. 멤버 이름 + 나이 변경 성공");
         }
+
+        ms.printMembers();      //모든 객체 정보 출력
+
+
     }
 }
