@@ -1,4 +1,4 @@
-package jun;
+package 김보민;
 
 public class Member {
 

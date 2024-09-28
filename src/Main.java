@@ -1,6 +1,6 @@
-import jun.ManagementSystem;
-import jun.ManagementSystemImpl;
-import jun.Member;
+import 김보민.ManagementSystem;
+import 김보민.ManagementSystemImpl;
+import 김보민.Member;
 
 import java.util.List;
 import java.util.Optional;
@@ -9,6 +9,7 @@ public class Main {
 
     // 여러분이 구현한 클래스로 교체해서 테스트하면 됩니다
     static ManagementSystem ms = new ManagementSystemImpl();
+    // ManagementSystem 인터페이스 타입으로 선언 되었고, ManagementSystemImpl 객체를 참조하고 있다.
 
     public static void main(String[] args) {
         System.out.println("9번까지 모두 출력되면 성공");
