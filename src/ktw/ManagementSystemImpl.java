@@ -11,7 +11,9 @@ import jun.Member;
 ;
 public class ManagementSystemImpl implements ManagementSystem {
 
+
     HashSet<Member> members = new HashSet<Member>();
+
     @Override
     public boolean addMember(String name, int age, int id) {
         // findById를 날렸을때 값이 없으면 멤버를 추가함
@@ -81,18 +83,19 @@ public class ManagementSystemImpl implements ManagementSystem {
 
     @Override
     public Member findById(int id) {
-        Optional<Member> tempResult = members.stream()
+        return members.stream()
                 .filter(member -> member.getId() == id)
-                .findFirst();
-        return tempResult.orElse(null);
-        /*
+                .findFirst()
+                .orElse(null);
+    }
+            /*
         if(tempResult.isPresent()){
             return tempResult.get();
         } else {
             return null;
         }
+        -> orElse로 축약 가능
          */
-    }
 
    /*
         구조 파악을 위해 하나씩 풀어 써본 코드
@@ -119,21 +122,16 @@ public class ManagementSystemImpl implements ManagementSystem {
         return members.stream().filter(filter).collect(Collectors.toList());
         // 자바 16부터는 stream 자체에 toList() 메소드가 도입되어 이렇게도 쓸 수 있다고 한다
         // return members.stream().filter(filter).toList();
-
-//        return List.of();
-
-
     }
 
     @Override
     public Optional<Member> findMember(Predicate<Member> filter) {
         return members.stream().filter(filter).findFirst();
-//        return Optional.empty();
     }
 
     @Override
     public void printMembers() {
-        members.stream().forEach(member -> System.out.println("toString"));
+        members.forEach(member -> System.out.println("toString"));
     }
 
     @Override
