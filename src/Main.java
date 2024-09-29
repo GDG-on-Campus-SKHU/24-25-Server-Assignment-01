@@ -2,8 +2,10 @@ import jun.ManagementSystem;
 import jun.ManagementSystemImpl;
 import jun.Member;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 public class Main {
 
@@ -25,6 +27,9 @@ public class Main {
         if (ms.getSize() == 9) {
             System.out.println("1. 멤버 추가 성공");
         }
+
+        HashMap<Integer, Member> map = new HashMap<>();
+        Stream<Member> stream = map.values().stream();
 
         // id 중복 테스트
         boolean addJun = ms.addMember("Jun", 24, 10);
