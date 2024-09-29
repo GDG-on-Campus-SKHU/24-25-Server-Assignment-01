@@ -1,10 +1,7 @@
+package 박대경;
 
-import jun.ManagementSystem;
-import jun.Member;
-import jun.ManagementSystemImpl;
 import java.util.List;
 import java.util.Optional;
-
 
 public class Main {
 
@@ -73,5 +70,8 @@ public class Main {
         if (ms.findById(3).getAge() == 50 && ms.findById(3).getName().equals("Park")) {
             System.out.println("9. 멤버 이름 + 나이 변경 성공");
         }
+
+        System.out.print("멤버 이름 : ");
+        ms.printMembers();
     }
 }

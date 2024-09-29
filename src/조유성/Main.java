@@ -1,10 +1,8 @@
+package 조유성;
 
-import jun.ManagementSystem;
-import jun.Member;
-import jun.ManagementSystemImpl;
+
 import java.util.List;
 import java.util.Optional;
-
 
 public class Main {
 
