@@ -1,8 +1,4 @@
-import jihoo.ManagementSystemImpl2;
-import jun.ManagementSystem;
-import jun.ManagementSystemImpl;
-import jun.Member;
-import 현정빈.Myclass;
+package daekyeong;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,7 +6,7 @@ import java.util.Optional;
 public class Main {
 
     // 여러분이 구현한 클래스로 교체해서 테스트하면 됩니다
-    static ManagementSystem ms = new ManagementSystemImpl2();
+    static ManagementSystem ms = new ManagementSystemImpl();
 
     public static void main(String[] args) {
         System.out.println("9번까지 모두 출력되면 성공");
@@ -74,5 +70,8 @@ public class Main {
         if (ms.findById(3).getAge() == 50 && ms.findById(3).getName().equals("Park")) {
             System.out.println("9. 멤버 이름 + 나이 변경 성공");
         }
+
+        System.out.print("멤버 이름 : ");
+        ms.printMembers();
     }
 }

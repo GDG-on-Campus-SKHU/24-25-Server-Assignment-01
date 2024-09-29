@@ -7,3 +7,7 @@ Thumbs.db
 .DS_Store
 .Spotlight-V100
 .Trashes
+
+.idea
+24-25-Server-Assignment-01.iml
+/src/.idea/
