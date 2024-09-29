@@ -1,3 +1,4 @@
+import jihoo.ManagementSystemImpl2;
 import jun.ManagementSystem;
 import jun.ManagementSystemImpl;
 import jun.Member;
@@ -8,7 +9,7 @@ import java.util.Optional;
 public class Main {
 
     // 여러분이 구현한 클래스로 교체해서 테스트하면 됩니다
-    static ManagementSystem ms = new ManagementSystemImpl();
+    static ManagementSystem ms = new ManagementSystemImpl2();
 
     public static void main(String[] args) {
         System.out.println("9번까지 모두 출력되면 성공");
