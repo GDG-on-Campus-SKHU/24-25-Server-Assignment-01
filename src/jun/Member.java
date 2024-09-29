@@ -1,5 +1,7 @@
 package jun;
 
+import java.util.Objects;
+
 public class Member {
 
     private String name; // 이름
@@ -13,6 +15,21 @@ public class Member {
         this.age = age;
         this.id = id;
     }
+    // equals, hashCode 메서드 재정의 gpt
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Member member = (Member) o;
+        return id == member.id;  // id만으로 비교
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);  // id만을 기반으로 해시코드 생성
+    }
+
+
 
     // Getter and Setter
     public String getName() { return name; }
