@@ -1,75 +1,49 @@
-package jun;
+package seun;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import jun.ManagementSystem;
+import jun.Member;
+
+import java.util.*;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
-/**
- * 단순 참고를 위한 예제입니다
- * 모범 답안이 아닙니다!!!
- */
 public class ManagementSystemImpl implements ManagementSystem {
 
-    Map<Integer, Member> members = new HashMap<>();
+    private final Map<Integer, Member> members = new HashMap<>();
 
     @Override
     public boolean addMember(String name, int age, int id) {
-        if (members.containsKey(id)) {
-            return false;
-        }
-
-        members.put(id, new Member(name, age, id));
-
-        return true;
+        return members.putIfAbsent(id, new Member(name, age, id)) == null;
     }
 
     @Override
     public boolean removeMember(int id) {
-        if (!members.containsKey(id)) {
-            return false;
-        }
-
-        members.remove(id);
-
-        return true;
+        return members.remove(id) != null;
     }
 
     @Override
     public boolean updateMember(int id, String name) {
-        if (!members.containsKey(id)) {
-            return false;
-        }
-
         Member member = members.get(id);
+        if (member == null) return false;
         member.setName(name);
-
         return true;
     }
 
+
     @Override
     public boolean updateMember(int id, int age) {
-        if (!members.containsKey(id)) {
-            return false;
-        }
-
         Member member = members.get(id);
+        if (member == null) return false;
         member.setAge(age);
-
         return true;
     }
 
     @Override
     public boolean updateMember(int id, String name, int age) {
-        if (!members.containsKey(id)) {
-            return false;
-        }
-
         Member member = members.get(id);
+        if (member == null) return false;
         member.setName(name);
         member.setAge(age);
-
         return true;
     }
 
@@ -82,14 +56,14 @@ public class ManagementSystemImpl implements ManagementSystem {
     public List<Member> findMembers(Predicate<Member> filter) {
         return members.values().stream()
                 .filter(filter)
-                .toList();
+                .collect(Collectors.toList());
     }
 
     @Override
     public Optional<Member> findMember(Predicate<Member> filter) {
         return members.values().stream()
                 .filter(filter)
-                .findAny();
+                .findFirst();
     }
 
     @Override
